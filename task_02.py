@@ -15,8 +15,7 @@ def get_cats_info(path):
         result = []
         with open(path, "r", encoding="UTF-8") as cats_info:
             for cats_info_values in cats_info:
-                cats_info_values = cats_info_values.strip()
-                cats_info_values = cats_info_values.split(',')
+                cats_info_values = cats_info_values.strip().split(",")
                 result.append(dict(zip(cats_info_keys, cats_info_values)))
             return result
     except FileNotFoundError:
