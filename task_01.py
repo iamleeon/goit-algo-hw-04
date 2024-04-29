@@ -10,13 +10,12 @@ def total_salary(path):
                 total_sal += float(line[-1])
                 el_digit_count += 1
             average_sal = round((total_sal / el_digit_count), 2)  # counts the average salary
-            return total_sal, average_sal
     except (FileNotFoundError, ZeroDivisionError) as error:
-        print(error)
+        print(f"Exception caught: {error}")
+        total_sal, average_sal = None, None
+    finally:
+        return total_sal, average_sal
+        
 
-
-try:
-    total, average = total_salary("salaries.txt")
-    print(f"Total salary: {total}. Average salary: {average}")
-except (ValueError, TypeError) as err:
-    print(err)
+total, average = total_salary("salarises.txt")
+print(f"Total salary: {total}. Average salary: {average}")
