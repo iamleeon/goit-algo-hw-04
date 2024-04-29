@@ -41,8 +41,13 @@ def display_contact(args, contacts):
 
 
 def display_all_contacts(contacts):
+    contacts_list = ""
     for key in contacts.keys():
-        print(f"Name: {key}. Phone: {contacts[key]}")
+        if key:
+            contacts_list += f"Name: {key}. Phone: {contacts[key]}\n"
+        else:
+            break
+    return contacts_list
 
 
 def main():
