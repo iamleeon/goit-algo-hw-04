@@ -17,5 +17,5 @@ def total_salary(path):
         return total_sal, average_sal
         
 
-total, average = total_salary("salarises.txt")
+total, average = total_salary()
 print(f"Total salary: {total}. Average salary: {average}")
